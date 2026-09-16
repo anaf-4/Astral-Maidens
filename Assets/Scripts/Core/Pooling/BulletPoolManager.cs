@@ -39,8 +39,8 @@ public class BulletPoolManager : MonoBehaviour
 
     public void Despawn(GameObject prefab, Bullet bullet)
     {
+        if (!_active.Remove(bullet)) return;
         bullet.OnDespawn();
-        _active.Remove(bullet);
         _pools[prefab].Release(bullet);
     }
 
