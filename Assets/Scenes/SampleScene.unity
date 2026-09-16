@@ -483,6 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1926386908}
   - component: {fileID: 1926386909}
+  - component: {fileID: 1926386910}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -517,6 +518,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef591017e7f9d184a956c05bc9a5b472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPoolManager
+--- !u!114 &1926386910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926386907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2a8dc330fb2e84ba065a80ef6d4c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletBoundsChecker
+  marginUnits: 2
 --- !u!1 &2094079986
 GameObject:
   m_ObjectHideFlags: 0
