@@ -55,7 +55,7 @@ public class HudController : MonoBehaviour
         }
         for (int i = 0; i < count; i++)
         {
-            Instantiate(iconPrefab, container);
+            Instantiate(iconPrefab, container, false);
         }
     }
 }
