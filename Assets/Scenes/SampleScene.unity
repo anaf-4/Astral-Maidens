@@ -586,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03a02f2c345fc049bfc33b6dee9a4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHitboxTrigger
+  _stats: {fileID: 408002727}
 --- !u!58 &895884218
 CircleCollider2D:
   m_ObjectHideFlags: 0

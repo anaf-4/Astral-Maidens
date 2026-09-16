@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHitboxTrigger : MonoBehaviour
 {
-    private PlayerStats _stats;
+    [SerializeField] private PlayerStats _stats;
 
     public void SetStats(PlayerStats stats)
     {
