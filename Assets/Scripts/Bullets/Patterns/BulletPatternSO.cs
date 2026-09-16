@@ -5,8 +5,8 @@ public class BulletPatternSO : ScriptableObject
 {
     public PatternType type;
     public GameObject bulletPrefab;
-    public int n = 8;
-    public int k = 5;
+    [Min(1)] public int n = 8;
+    [Min(1)] public int k = 5;
     public float deltaThetaDeg = 6f;
     public float fanAngleDeg = 60f;
     public float baseAngleDeg;

@@ -39,6 +39,7 @@ public class PatternExecutor : MonoBehaviour
     {
         while (true)
         {
+            if (pattern == null) yield break;
             Fire();
             yield return new WaitForSeconds(pattern.interval);
         }

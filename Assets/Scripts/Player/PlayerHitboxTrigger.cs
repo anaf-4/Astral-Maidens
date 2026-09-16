@@ -12,7 +12,7 @@ public class PlayerHitboxTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var bullet = other.GetComponent<Bullet>();
-        if (bullet == null || _stats == null) return;
+        if (bullet == null || _stats == null || _stats.IsInvulnerable) return;
 
         _stats.TakeHit();
         bullet.Despawn();

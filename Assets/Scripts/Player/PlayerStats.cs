@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int startingLife = 3;
     [SerializeField] private int startingSpell = 3;
     [SerializeField] private float invulnerabilitySeconds = 2f;
+    [SerializeField] private float blinkInterval = 0.1f;
 
     private const float MaxPower = 4f;
 
@@ -18,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     private int _spell;
     private float _power;
     private float _invulnTimer;
+    private SpriteRenderer _spriteRenderer;
 
     public bool IsInvulnerable => _invulnTimer > 0f;
 
@@ -26,6 +28,7 @@ public class PlayerStats : MonoBehaviour
         _life = startingLife;
         _spell = startingSpell;
         _power = 0f;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -37,7 +40,18 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (_invulnTimer > 0f) _invulnTimer -= Time.deltaTime;
+        if (_invulnTimer > 0f)
+        {
+            _invulnTimer -= Time.deltaTime;
+            if (_spriteRenderer != null)
+            {
+                _spriteRenderer.enabled = Mathf.FloorToInt(_invulnTimer / blinkInterval) % 2 == 0;
+            }
+        }
+        else if (_spriteRenderer != null && !_spriteRenderer.enabled)
+        {
+            _spriteRenderer.enabled = true;
+        }
     }
 
     public void TakeHit()
