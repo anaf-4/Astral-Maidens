@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3365cda21fd9edb4c9644f49ba033c64, type: 3}
+  m_Name: IceCrystalMaiden_Spiral8
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPatternSO
+  type: 1
+  bulletPrefab: {fileID: 999059348882321652, guid: 0f0e64d7b9443f147ae732946a335dfa, type: 3}
+  n: 8
+  k: 5
+  deltaThetaDeg: 6
+  fanAngleDeg: 60
+  baseAngleDeg: 0
+  targetedSpreadDeg: 10
+  speed: 3
+  interval: 0.05
+  aimAtPlayer: 0
