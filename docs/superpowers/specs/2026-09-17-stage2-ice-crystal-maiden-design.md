@@ -72,7 +72,7 @@
 
 ## 6. Ice Crystal Maiden 보스 조립
 
-- `Assets/Art/Bosses/IceCrystalMaiden/character_01.png` 임포트(PPU 130 — 트림된 평균 폭 ≈263px 기준 시각적 폭 약 2 unit, 플레이어보다 크게). Point filter, no mipmap, 나머지 15프레임은 이번 단계에서 미사용(애니메이션 없음, 1단계 플레이어와 동일 원칙).
+- `AstralMaidens/bosses/ice_crystal_maiden/frames_fixed/frame_01.png` → `Assets/Art/Bosses/IceCrystalMaiden/frame_01.png` 임포트(PPU 130 — 트림된 평균 폭 ≈263px 기준 시각적 폭 약 2 unit, 플레이어보다 크게). Point filter, no mipmap, 나머지 15프레임은 이번 단계에서 미사용(애니메이션 없음, 1단계 플레이어와 동일 원칙). (manifest.json의 source 필드는 "character_01.png"로 되어 있으나 실제 분리된 파일명은 다른 에셋과 동일하게 `frame_01.png` — 실제 폴더 확인 완료.)
 - 적탄 이펙트 추가 임포트: `Assets/Art/Effects/IceMagic/frame_03.png`(초승달, crystal_moon), `frame_05.png`(snowflake 변형, ice_needle), `frame_09.png`(sparkle-orb, ice_shard) — 기존 frame_01/frame_04는 그대로 둠(플레이어 탄/1단계 테스트용).
 - `Assets/Data/Bosses/IceCrystalMaiden_Phase1.asset`(통상):
   - `hp=30`, `isSpellCard=false`, `timeLimitSeconds=0`
