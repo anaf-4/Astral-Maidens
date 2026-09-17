@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer hitboxRenderer;
     [SerializeField] private float normalSpeed = 6f;
     [SerializeField] private float focusSpeed = 3f;
+    [SerializeField] private PlayerStatusController statusController;
+    [SerializeField] private PlayerStats stats;
 
     private InputAction _move;
     private InputAction _focus;
@@ -17,6 +19,16 @@ public class PlayerController : MonoBehaviour
         hitboxRenderer = hitboxVisual;
     }
 
+    public void SetStatusController(PlayerStatusController status)
+    {
+        statusController = status;
+    }
+
+    public void SetStats(PlayerStats playerStats)
+    {
+        stats = playerStats;
+    }
+
     private void Awake()
     {
         var map = controlsAsset.FindActionMap("Gameplay");
@@ -25,10 +37,26 @@ public class PlayerController : MonoBehaviour
         map.Enable();
     }
 
+    private void OnEnable()
+    {
+        if (stats != null) stats.OnGameOver += HandleGameOver;
+    }
+
+    private void OnDisable()
+    {
+        if (stats != null) stats.OnGameOver -= HandleGameOver;
+    }
+
+    private void HandleGameOver()
+    {
+        enabled = false;
+    }
+
     private void Update()
     {
         bool focusing = _focus.IsPressed();
-        float speed = focusing ? focusSpeed : normalSpeed;
+        float multiplier = statusController != null ? statusController.CurrentSpeedMultiplier : 1f;
+        float speed = (focusing ? focusSpeed : normalSpeed) * multiplier;
         if (hitboxRenderer != null) hitboxRenderer.enabled = focusing;
 
         Vector2 input = _move.ReadValue<Vector2>();
